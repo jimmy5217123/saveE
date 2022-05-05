@@ -4,11 +4,11 @@
     app
     absolute
     class="v-bar--underline"
-    color="transparent"
+    color="white"
     :clipped-left="$vuetify.rtl"
     :clipped-right="!$vuetify.rtl"
     height="70"
-    flat
+    style="position: fixed"
   >
     <v-app-bar-nav-icon
       class="hidden-md-and-up"
