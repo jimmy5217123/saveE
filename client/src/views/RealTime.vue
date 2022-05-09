@@ -61,7 +61,10 @@
     }),
     methods: {
       toInfoPage () {
-        this.$router.push({ path: 'realTimeRouter', replace: true })
+        const params = {
+          siteName: 'test123',
+        }
+        this.$router.push({ path: 'realTimeRouter', replace: true, query: params })
       }
     },
     computed: {

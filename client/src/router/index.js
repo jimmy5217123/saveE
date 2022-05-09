@@ -1,7 +1,6 @@
 // Imports
 import Vue from 'vue'
 import Router from 'vue-router'
-import { trailingSlash } from '@/util/helpers'
 
 Vue.use(Router)
 
@@ -63,14 +62,18 @@ const router = new Router({
           path: 'components/realTimeRouter',
           name: 'realTimeRouter',
           component: () => import(`../views/realTimeRouter/realTimeRouter`),
+          children: [
+            {
+              path: '',
+              name: 'info',
+              component: () => import(`../views/realTimeRouter/info`)
+            }
+          ]
         }
       ]
     }
   ]
 })
 
-// router.beforeEach((to, from, next) => {
-//   // return to.path.endsWith('/') ? next() : next(trailingSlash(to.path))
-// })
 
 export default router
