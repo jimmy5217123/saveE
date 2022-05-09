@@ -19,7 +19,7 @@ export function error (code = 404) {
 
 export function layout (layout = 'Default', children, path = '') {
   const dir = kebabCase(layout)
-
+  console.log(dir)
   return {
     children,
     component: () => import(
@@ -30,10 +30,7 @@ export function layout (layout = 'Default', children, path = '') {
   }
 }
 
-export function redirect (
-  path = '*',
-  rhandler,
-) {
+export function redirect ( path = '*', rhandler) {
   if (typeof path === 'function') {
     rhandler = path
     path = '*'
@@ -65,7 +62,6 @@ export function route (name, component, path = '') {
       `@/views/${value}`
     )
   }
-
   return {
     name,
     components,

@@ -45,7 +45,7 @@ const state = {
     {
       title: '案場資訊',
       icon: 'mdi-bell',
-      to: '/components/realtime/',
+      to: '/components/realtime',
     },
   ],
 }

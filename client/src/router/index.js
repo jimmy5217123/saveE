@@ -22,26 +22,41 @@ const router = new Router({
     layout('Default', [
       route('Dashboard'),
 
-      // Pages
       route('UserProfile', null, 'components/profile'),
 
-      // Components
       route('Notifications', null, 'components/notifications'),
       route('Icons', null, 'components/icons'),
       route('Typography', null, 'components/typography'),
       route('RealTime', null, 'components/realtime'),
+      route('info', null, 'components/realtime/info'),
 
-      // Tables
       route('Regular Tables', null, 'tables/regular'),
 
-      // Maps
       route('Google Maps', null, 'maps/google'),
-    ]),
-  ],
+    ])
+  ]
 })
 
-router.beforeEach((to, from, next) => {
-  return to.path.endsWith('/') ? next() : next(trailingSlash(to.path))
-})
+const routes = [
+  layout('Default', [
+    route('Dashboard'),
+
+    route('UserProfile', null, 'components/profile'),
+
+    route('Notifications', null, 'components/notifications'),
+    route('Icons', null, 'components/icons'),
+    route('Typography', null, 'components/typography'),
+    route('RealTime', null, 'components/realtime'),
+    route('info', null, 'components/realtime/info'),
+
+    route('Regular Tables', null, 'tables/regular'),
+
+    route('Google Maps', null, 'maps/google'),
+  ])
+]
+console.log(JSON.stringify(routes))
+// router.beforeEach((to, from, next) => {
+//   return to.path.endsWith('/') ? next() : next(trailingSlash(to.path))
+// })
 
 export default router
