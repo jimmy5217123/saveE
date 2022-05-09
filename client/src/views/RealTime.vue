@@ -6,7 +6,7 @@
   >
     <v-row>
       <v-col cols="12" v-for="i in 7" :key="i"> 
-        <v-card class="px-5 cardBox" outlined elevation="2" style="border-radius:2px">
+        <v-card class="px-5 cardBox" outlined elevation="2" style="border-radius:2px" @click="toInfoPage">
               <v-row>
                 <v-col cols='3' class="text-h4 font-weight-bold">
                   示範案場
@@ -59,6 +59,11 @@
     data: () => ({
       factoryData: ['建置容量(kWh)', '饋線容量(kW)​', 'SOC(%)', 'SOH(%)​', '充放電(+/-kW)​', '轉換效率(%)​', '直流功率(+/-kW)']
     }),
+    methods: {
+      toInfoPage () {
+        this.$router.push({ path: 'realTimeRouter', replace: true })
+      }
+    },
     computed: {
     },
   }

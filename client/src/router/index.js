@@ -57,15 +57,20 @@ const router = new Router({
         {
           path: 'components/realtime',
           name: 'RealTime',
-          component: () => import(`../views/RealTime`),
+          component: () => import(`../views/RealTime`)
+        },
+        {
+          path: 'components/realTimeRouter',
+          name: 'realTimeRouter',
+          component: () => import(`../views/realTimeRouter/realTimeRouter`),
         }
       ]
     }
   ]
 })
 
-router.beforeEach((to, from, next) => {
-  return to.path.endsWith('/') ? next() : next(trailingSlash(to.path))
-})
+// router.beforeEach((to, from, next) => {
+//   // return to.path.endsWith('/') ? next() : next(trailingSlash(to.path))
+// })
 
 export default router
