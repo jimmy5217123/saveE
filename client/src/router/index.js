@@ -2,10 +2,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import { trailingSlash } from '@/util/helpers'
-import {
-  layout,
-  route,
-} from '@/util/routes'
 
 Vue.use(Router)
 
@@ -19,44 +15,57 @@ const router = new Router({
     return { x: 0, y: 0 }
   },
   routes: [
-    layout('Default', [
-      route('Dashboard'),
-
-      route('UserProfile', null, 'components/profile'),
-
-      route('Notifications', null, 'components/notifications'),
-      route('Icons', null, 'components/icons'),
-      route('Typography', null, 'components/typography'),
-      route('RealTime', null, 'components/realtime'),
-      route('info', null, 'components/realtime/info'),
-
-      route('Regular Tables', null, 'tables/regular'),
-
-      route('Google Maps', null, 'maps/google'),
-    ])
+    {
+      path: '',
+      component: () => import(`@/layouts/default/Index`),
+      children:[
+        {
+          path: '',
+          name: 'Dashboard',
+          component: () => import(`../views/Dashboard`),
+        },
+        {
+          path: 'components/profile',
+          name: 'UserProfile',
+          component: () => import(`../views/UserProfile`),
+        },
+        {
+          path: 'tables/regular',
+          name: 'Regular Tables',
+          component: () => import(`../views/RegularTables`),
+        },
+        {
+          path: 'maps/google',
+          name: 'Google Maps',
+          component: () => import(`../views/GoogleMaps`),
+        },
+        {
+          path: 'components/notifications',
+          name: 'Notifications',
+          component: () => import(`../views/Notifications`),
+        },
+        {
+          path: 'components/icons',
+          name: 'Icons',
+          component: () => import(`../views/Icons`),
+        },
+        {
+          path: 'components/typography',
+          name: 'Typography',
+          component: () => import(`../views/Typography`),
+        },
+        {
+          path: 'components/realtime',
+          name: 'RealTime',
+          component: () => import(`../views/RealTime`),
+        }
+      ]
+    }
   ]
 })
 
-const routes = [
-  layout('Default', [
-    route('Dashboard'),
-
-    route('UserProfile', null, 'components/profile'),
-
-    route('Notifications', null, 'components/notifications'),
-    route('Icons', null, 'components/icons'),
-    route('Typography', null, 'components/typography'),
-    route('RealTime', null, 'components/realtime'),
-    route('info', null, 'components/realtime/info'),
-
-    route('Regular Tables', null, 'tables/regular'),
-
-    route('Google Maps', null, 'maps/google'),
-  ])
-]
-console.log(JSON.stringify(routes))
-// router.beforeEach((to, from, next) => {
-//   return to.path.endsWith('/') ? next() : next(trailingSlash(to.path))
-// })
+router.beforeEach((to, from, next) => {
+  return to.path.endsWith('/') ? next() : next(trailingSlash(to.path))
+})
 
 export default router

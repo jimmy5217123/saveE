@@ -19,13 +19,9 @@ export function error (code = 404) {
 
 export function layout (layout = 'Default', children, path = '') {
   const dir = kebabCase(layout)
-  console.log(dir)
   return {
     children,
-    component: () => import(
-      /* webpackChunkName: "layout-[request]" */
-      `@/layouts/${dir}/Index`
-    ),
+    component: () => import(`@/layouts/${dir}/Index`),
     path,
   }
 }
