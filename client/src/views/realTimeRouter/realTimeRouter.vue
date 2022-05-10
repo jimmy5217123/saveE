@@ -1,8 +1,7 @@
 <template>
 <div id="app">
-  <v-app id="inspire">
     <v-row class="ma-0">
-        <v-card height="300px" width="256">
+        <v-card height="200px" width="256">
           <v-navigation-drawer permanent>
             <v-list-item>
               <v-list-item-content>
@@ -32,7 +31,6 @@
         </v-card>
         <router-view />
     </v-row>
-  </v-app>
 </div>
 </template>
 
