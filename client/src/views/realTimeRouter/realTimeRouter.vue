@@ -50,12 +50,17 @@
     },
     methods: {
       ChangeRouter (to) {
-        this.$router.push({ path: `/components/realTimeRouter/${to}`, replace: true, query: this.$router.history.current.query}).catch(err => {err})
+        this.$router.push({ path: `/components/realTimeRouter/${to}`, query: this.$router.history.current.query}).catch(err => {err})
       }
     },
     computed: {
-      routerName () {
-        return this.items.findIndex(x => x.name === this.$router.history.current.name)
+      routerName: {
+        get() {
+          return this.items.findIndex(x => x.name === this.$router.history.current.name)
+        },
+        set () {
+          return this.items.findIndex(x => x.name === this.$router.history.current.name)
+        } 
       }
     },
   }

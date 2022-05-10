@@ -5,9 +5,11 @@ import vuetify from './plugins/vuetify'
 import './plugins'
 import store from './store'
 import { sync } from 'vuex-router-sync'
+import VueHighcharts from 'vue-highcharts'
 
 Vue.config.productionTip = false
 
+Vue.use(VueHighcharts)
 sync(store, router)
 
 new Vue({

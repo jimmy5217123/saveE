@@ -1,6 +1,6 @@
 <template>
     <v-row class="pa-0 mx-4">
-        dasdasd
+        <highcharts options="" />
     </v-row>
 </template>
 
