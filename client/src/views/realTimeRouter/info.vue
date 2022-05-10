@@ -2,7 +2,7 @@
     <v-col class="pa-1">
         <v-row class="pa-0 mx-4">
             <v-col cols='2' class="pa-0 ma-0">
-                <v-select class="pa-0 ma-0" label='儲能櫃' :items='saveBox'></v-select>
+                <v-select class="pa-0 ma-0" label='儲能櫃' :items='saveBox' v-model="saveBoxSelect"></v-select>
             </v-col>
         </v-row>
         <v-row class="ma-0">
@@ -92,6 +92,7 @@
 export default {
     data () {
     return {
+        saveBoxSelect: '儲能櫃一',
         saveBox: ['儲能櫃一', '儲能櫃二'],
         HVdata: [
             {
