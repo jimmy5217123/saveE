@@ -2,7 +2,7 @@
 <div id="app">
   <v-app id="inspire">
     <v-row class="ma-0">
-        <v-card height="90vh" width="256">
+        <v-card height="300px" width="256">
           <v-navigation-drawer permanent>
             <v-list-item>
               <v-list-item-content>
