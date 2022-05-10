@@ -2,7 +2,7 @@
     <v-col class="pa-1">
         <v-row class="pa-0 mx-4">
             <v-col cols='2' class="pa-0 ma-0">
-                <v-select class="pa-0 ma-0" :items='saveBox' v-model="saveBoxSelect"></v-select>
+                <v-select solo dense class="pa-0 ma-0" :items='saveBox' v-model="saveBoxSelect"></v-select>
             </v-col>
         </v-row>
         <v-row class="ma-0">
