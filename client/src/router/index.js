@@ -61,12 +61,17 @@ const router = new Router({
         {
           path: 'components/realTimeRouter',
           name: 'realTimeRouter',
-          component: () => import(`../views/realTimeRouter/realTimeRouter`),
+          component: () => import(`../views/realTimeRouter/RealTimeRouter`),
           children: [
             {
               path: '',
               name: 'info',
-              component: () => import(`../views/realTimeRouter/info`)
+              component: () => import(`../views/realTimeRouter/Info`)
+            },
+            {
+              path: 'history',
+              name: 'history',
+              component: () => import(`../views/realTimeRouter/History`)
             }
           ]
         }
