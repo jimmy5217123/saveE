@@ -20,46 +20,41 @@ const router = new Router({
       children:[
         {
           path: '',
-          name: 'Dashboard',
-          component: () => import(`../views/Dashboard`),
-        },
-        {
-          path: 'components/profile',
-          name: 'UserProfile',
-          component: () => import(`../views/UserProfile`),
-        },
-        {
-          path: 'tables/regular',
-          name: 'Regular Tables',
-          component: () => import(`../views/RegularTables`),
-        },
-        {
-          path: 'maps/google',
-          name: 'Google Maps',
-          component: () => import(`../views/GoogleMaps`),
-        },
-        {
-          path: 'components/notifications',
-          name: 'Notifications',
-          component: () => import(`../views/Notifications`),
-        },
-        {
-          path: 'components/icons',
-          name: 'Icons',
-          component: () => import(`../views/Icons`),
-        },
-        {
-          path: 'components/typography',
-          name: 'Typography',
-          component: () => import(`../views/Typography`),
-        },
-        {
-          path: 'components/realtime',
           name: 'RealTime',
-          component: () => import(`../views/RealTime`)
+          component: () => import(`../views/RealTime`),
         },
+        // {
+        //   path: 'components/profile',
+        //   name: 'UserProfile',
+        //   component: () => import(`../views/UserProfile`),
+        // },
+        // {
+        //   path: 'tables/regular',
+        //   name: 'Regular Tables',
+        //   component: () => import(`../views/RegularTables`),
+        // },
+        // {
+        //   path: 'maps/google',
+        //   name: 'Google Maps',
+        //   component: () => import(`../views/GoogleMaps`),
+        // },
+        // {
+        //   path: 'components/notifications',
+        //   name: 'Notifications',
+        //   component: () => import(`../views/Notifications`),
+        // },
+        // {
+        //   path: 'components/icons',
+        //   name: 'Icons',
+        //   component: () => import(`../views/Icons`),
+        // },
+        // {
+        //   path: 'components/typography',
+        //   name: 'Typography',
+        //   component: () => import(`../views/Typography`),
+        // },
         {
-          path: 'components/realTimeRouter',
+          path: 'realTimeRouter',
           name: 'realTimeRouter',
           component: () => import(`../views/realTimeRouter/RealTimeRouter`),
           children: [

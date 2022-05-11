@@ -7,8 +7,8 @@
         </v-row>
         <v-row class="pa-0 mx-4">
             <v-col class="pa-0 ma-0">
-                <v-card>
-                    <Highcharts :options="eTodayChart" />
+                <v-card class="pa-5">
+                    <Highcharts :options="historyChart" />
                 </v-card>
             </v-col>
         </v-row>
@@ -21,7 +21,7 @@ export default {
         return {
             deciveBox: ['BES', 'PCS', 'HV Meter'],
             deciveBoxSelect: 'BES',
-            eTodayChart: {
+            historyChart: {
                 chart: {
                     backgroundColor: null,
                     events: {}
@@ -45,24 +45,25 @@ export default {
                 legend: {
                     layout: 'horizontal',
                     align: 'center',
-                    verticalAlign: 'top',
+                    verticalAlign: 'bottom',
                     floating: false
                 },
                 yAxis: [
                     {
                         title: {
-                        text: '發電量 (kWh)'
-                        }
+                            text: ''
+                        },
+                        opposite: false
                     },
                     {
                         title: {
-                        text: '日照量 (kWh/m2)'
+                            text: ''
                         },
                         opposite: true
                     },
                     {
                         title: {
-                        text: '累計發電量 (kWh)'
+                            text: ''
                         },
                         opposite: true
                     }
@@ -72,54 +73,39 @@ export default {
                 },
                 series: [
                 {
-                    color: 'rgb(255, 192, 0)',
-                    type: 'column',
-                    name: '目標發電量 (kWh)',
-                    data: [60000, 60000, 60000, 60000, 60000, 60000, 60000, 60000, 60000, 62000, 62000, 62000],
+                    name: '電壓',
+                    data: [850, 850, 850, 850, 850, 850, 850, 850, 850, 850, 850, 850],
                     yAxis: 0,
                     visible: true
                 },
                 {
-                    color: 'rgb(124,181,236)',
-                    type: 'column',
-                    name: '實際發電量 (kWh)',
-                    data: [50000, 50000, 50000, 50000, 50000, 50000, 50000, 50000, 50000],
+                    name: '電流',
+                    data: [759, 759, 759, 759, 759, 759, 759, 759, 759],
                     yAxis: 0,
                     visible: true
                 },
                 {
-                    color: 'rgb(255, 192, 0)',
-                    name: '目標日照 (kWh/m2)',
-                    data: [110, 110, 110, 110, 110, 110, 110, 110, 110, 110, 110, 110],
-                    yAxis: 1,
-                    visible: true
-                },
-                {
-                    color: 'rgb(124,181,236)',
-                    name: '實際日照 (kWh/m2)',
-                    data: [100, 80, 100, 80, 90, 100, 100, 100, 100],
-                    yAxis: 1,
-                    visible: true
-                },
-                {
-                    color: 'black',
-                    name: '實際累積發電量 (kWh)',
-                    data: [650000, 700000, 750000, 800000, 850000, 900000, 950000, 1000000, 1050000],
-                    yAxis: 2,
+                    name: '功率',
+                    data: [680, 680, 680, 680, 680, 680, 680, 680, 680, 680, 680, 680],
+                    yAxis: 0,
                     visible: true
                 }],
                 responsive: {
-                    rules: [{
-                        condition: {
-                        maxWidth: 500
-                        },
-                        chartOptions: {
-                        legend: {
-                            layout: 'horizontal',
-                            align: 'center',
-                            verticalAlign: 'bottom',
-                            y: 0
-                        }
+                    rules: [
+                        {
+                            condition: 
+                            {
+                                maxWidth: 500
+                            },
+                        chartOptions: 
+                        {
+                            legend: 
+                            {
+                                layout: 'horizontal',
+                                align: 'center',
+                                verticalAlign: 'bottom',
+                                y: 0
+                            }
                         }
                     }]
                 }

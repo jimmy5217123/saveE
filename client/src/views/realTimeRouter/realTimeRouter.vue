@@ -50,7 +50,7 @@
     },
     methods: {
       ChangeRouter (to) {
-        this.$router.push({ path: `/components/realTimeRouter/${to}`, query: this.$router.history.current.query}).catch(err => {err})
+        this.$router.push({ path: `/realTimeRouter/${to}`, query: this.$router.history.current.query}).catch(err => {err})
       }
     },
     computed: {
