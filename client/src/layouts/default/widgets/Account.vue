@@ -15,7 +15,7 @@
         v-bind="attrs"
         v-on="on"
       >
-        <v-icon>mdi-account</v-icon>
+        <v-icon style="color:white">mdi-account</v-icon>
       </v-btn>
     </template>
 

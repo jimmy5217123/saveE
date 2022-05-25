@@ -23,36 +23,6 @@ const router = new Router({
           name: 'RealTime',
           component: () => import(`../views/RealTime`),
         },
-        // {
-        //   path: 'components/profile',
-        //   name: 'UserProfile',
-        //   component: () => import(`../views/UserProfile`),
-        // },
-        // {
-        //   path: 'tables/regular',
-        //   name: 'Regular Tables',
-        //   component: () => import(`../views/RegularTables`),
-        // },
-        // {
-        //   path: 'maps/google',
-        //   name: 'Google Maps',
-        //   component: () => import(`../views/GoogleMaps`),
-        // },
-        // {
-        //   path: 'components/notifications',
-        //   name: 'Notifications',
-        //   component: () => import(`../views/Notifications`),
-        // },
-        // {
-        //   path: 'components/icons',
-        //   name: 'Icons',
-        //   component: () => import(`../views/Icons`),
-        // },
-        // {
-        //   path: 'components/typography',
-        //   name: 'Typography',
-        //   component: () => import(`../views/Typography`),
-        // },
         {
           path: 'realTimeRouter',
           name: 'realTimeRouter',

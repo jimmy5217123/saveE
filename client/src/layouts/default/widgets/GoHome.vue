@@ -6,7 +6,7 @@
     to="/"
     exact
   >
-    <v-icon>mdi-view-dashboard</v-icon>
+    <v-icon style="color:white">mdi-view-dashboard</v-icon>
   </v-btn>
 </template>
 

@@ -4,31 +4,21 @@
     app
     absolute
     class="v-bar--underline"
-    color="white"
+    color="#042948"
     :clipped-left="$vuetify.rtl"
     :clipped-right="!$vuetify.rtl"
-    height="70"
+    height="55"
     style="position: fixed"
   >
-    <v-app-bar-nav-icon
-      class="hidden-md-and-up"
-      @click="drawer = !drawer"
-    />
+    <v-app-bar-nav-icon class="hidden-md-and-up" @click="drawer = !drawer"/>
 
     <default-drawer-toggle class="hidden-sm-and-down" />
 
-    <v-toolbar-title
-      class="font-weight-light text-h5"
-      v-text="name"
-    />
+    <v-toolbar-title class="font-weight-light text-h5" style="color: white" v-text="name"/>
 
     <v-spacer />
 
-    <default-search class="hidden-sm-and-down" />
-
     <default-go-home />
-
-    <default-notifications />
 
     <default-account />
   </v-app-bar>
@@ -42,26 +32,11 @@
     name: 'DefaultBar',
 
     components: {
-      DefaultAccount: () => import(
-        /* webpackChunkName: "default-account" */
-        './widgets/Account'
-      ),
-      DefaultDrawerToggle: () => import(
-        /* webpackChunkName: "default-drawer-toggle" */
-        './widgets/DrawerToggle'
-      ),
-      DefaultGoHome: () => import(
-        /* webpackChunkName: "default-go-home" */
-        './widgets/GoHome'
-      ),
-      DefaultNotifications: () => import(
-        /* webpackChunkName: "default-notifications" */
-        './widgets/Notifications'
-      ),
-      DefaultSearch: () => import(
-        /* webpackChunkName: "default-search" */
-        './widgets/Search'
-      ),
+      DefaultAccount: () => import('./widgets/Account'),
+      DefaultDrawerToggle: () => import('./widgets/DrawerToggle'),
+      DefaultGoHome: () => import('./widgets/GoHome'),
+      DefaultNotifications: () => import('./widgets/Notifications'),
+      DefaultSearch: () => import('./widgets/Search')
     },
 
     computed: {
