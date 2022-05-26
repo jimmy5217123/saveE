@@ -87,7 +87,7 @@
                             <div class="battery-level" style="height: 30%;"></div>
                         </div>
                         <div class="battery-text" style="width:70%">
-                            <v-simple-table style="">
+                            <v-simple-table>
                             <template v-slot:default>
                                 <tbody>
                                     <tr>
