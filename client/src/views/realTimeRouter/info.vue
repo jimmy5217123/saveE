@@ -82,8 +82,30 @@
                             </template>
                         </v-simple-table>
                     </v-card-text>
-                    <div class="battery mx-8">
-                        <div class="battery-level" style="height: 30%;"></div>
+                    <div style="display:flex">
+                        <div class="battery mx-8">
+                            <div class="battery-level" style="height: 30%;"></div>
+                        </div>
+                        <div class="battery-text" style="width:70%">
+                            <v-simple-table style="">
+                            <template v-slot:default>
+                                <tbody>
+                                    <tr>
+                                        <td>1000KW</td>
+                                    </tr>
+                                    <tr>
+                                        <td>960V</td>
+                                    </tr>
+                                    <tr>
+                                        <td>60A</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1000KW</td>
+                                    </tr>
+                                </tbody>
+                            </template>
+                        </v-simple-table>
+                        </div>
                     </div>
                 </material-card>
             </v-col>
@@ -196,6 +218,7 @@ td{
 
 $lightning-size: 30px;
 .battery {
+  margin-top: 15px;  
   border: 3px solid #333;
   width:45px;
   height: 84px;
